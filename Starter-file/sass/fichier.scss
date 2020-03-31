@@ -28,5 +28,37 @@
     text-align: center;
     margin: auto;
     background-color: yellow;
-    padding: 10px;
+    padding: 20px;
+}
+
+.content {
+    margin: 1% 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    &__colum1 {
+        &--img1 {
+            width: 90%;
+        }
+    }
+    &__colum2 {
+        &--text1 {
+            color: rgb(91, 91, 253);
+            padding: 20px 0px;
+        }
+        &--text2 {
+            padding: 20px 0px;
+            color: rgb(114, 114, 119);
+        }
+        &--but {
+            margin-top: 15px;
+            width: 85%;
+            height: 50px;
+            border: none;
+            background-image: url("/Design/Assets/SVG/En\ chiffres-1.svg");
+            border-radius: 8px;
+            color: white;
+            font-size: 40px;
+        }
+    }
 }

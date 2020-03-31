@@ -22,4 +22,27 @@
   text-align: center;
   margin: auto;
   background-color: yellow;
-  padding: 10px; }
+  padding: 20px; }
+
+.content {
+  margin: 1% 5%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center; }
+  .content__colum1--img1 {
+    width: 90%; }
+  .content__colum2--text1 {
+    color: #5b5bfd;
+    padding: 20px 0px; }
+  .content__colum2--text2 {
+    padding: 20px 0px;
+    color: #727277; }
+  .content__colum2--but {
+    margin-top: 15px;
+    width: 85%;
+    height: 50px;
+    border: none;
+    background-image: url("/Design/Assets/SVG/En chiffres-1.svg");
+    border-radius: 8px;
+    color: white;
+    font-size: 40px; }
