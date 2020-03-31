@@ -3,12 +3,19 @@
     margin: 0;
 }
 
+@import "./mixin";
+body {
+    font-family: "Cairo", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+}
+
 .navbar {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, auto);
     background-image: url("/Design/Assets/SVG/Merged\ bar-1.svg");
     .logo {
-        margin-left: 0px;
+        margin-left: 10px;
         margin-top: 10px;
     }
     .menu {
@@ -18,7 +25,11 @@
         &__element {
             margin-left: 30%;
             &--item {
-                padding: 0 50px;
+                margin: 0 30px;
+            }
+            &--item3 {
+                border: solid 1.5px rgb(106, 106, 224);
+                border-radius: 8px;
             }
         }
     }
@@ -51,14 +62,128 @@
             color: rgb(114, 114, 119);
         }
         &--but {
-            margin-top: 15px;
-            width: 85%;
-            height: 50px;
-            border: none;
-            background-image: url("/Design/Assets/SVG/En\ chiffres-1.svg");
-            border-radius: 8px;
-            color: white;
-            font-size: 40px;
+            @include btn;
+        }
+    }
+}
+
+.section1 {
+    width: 30%;
+    text-align: center;
+    margin: 20px auto;
+    &__symptomes1 {
+        @include symb;
+        margin-top: 15px;
+        &--element1 {
+            img {
+                margin: 15px;
+            }
+        }
+    }
+    &__symptomes2 {
+        @include symb;
+        &--ele2 {
+            img {
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+.section2 {
+    background-image: url("/Design/Assets/png/En\ chiffres-1.png");
+    color: white;
+    font-size: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    .para {
+        grid-row: 1/2;
+        grid-column: 1/3;
+        text-align: center;
+    }
+    &__part1 {
+        grid-row: 2/3;
+        grid-column: 2/3;
+        &--list {
+            li {}
+        }
+    }
+    &__part2 {
+        text-align: center;
+        &--par1 {
+            color: rgb(235, 212, 6);
+        }
+        &--par2 {
+            background-image: url("/Design/Assets/png/En\ chiffres-3.png");
+            width: 50%;
+            margin: 30px auto;
+            color: rgb(80, 89, 184);
+        }
+        &--par3 {
+            border-bottom: solid rgb(235, 212, 6) 2px;
+            width: 50%;
+            margin: auto;
+        }
+    }
+}
+
+.section3 {
+    background-image: url("/Design/Assets/SVG/Merged\ bar.svg");
+    text-align: center;
+    &__para {
+        color: rgb(80, 89, 184);
+        font-size: 30px;
+        padding-top: 5px;
+    }
+    &__img {
+        padding: 10px;
+    }
+    &__btn {
+        @include btn;
+        width: 38%;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+}
+
+.footer {
+    &__img {
+        text-align: center;
+    }
+    &__ele {
+        display: flex;
+        justify-content: space-around;
+        font-size: 18px;
+        &--item1 {
+            width: 100%;
+            text-align: center;
+            ul {
+                .tradiction {
+                    border: solid 1.5px rgb(106, 106, 224);
+                    border-radius: 8px;
+                    padding: 0;
+                    width: 15%;
+                    margin: 10px auto;
+                    list-style: none;
+                }
+            }
+        }
+        &--item2 {
+            width: 100%;
+            text-align: center;
+            .para1 {
+                color: rgb(106, 106, 224);
+            }
+            .para3 {
+                color: rgb(2, 185, 2);
+            }
+            .para5 {
+                color: rgb(2, 185, 2);
+            }
+        }
+        &--item3 {
+            color: #aaa6a6;
         }
     }
 }

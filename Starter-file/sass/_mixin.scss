@@ -1,0 +1,17 @@
+@mixin symb {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+@mixin btn {
+    font-family: cairo;
+    margin-top: 15px;
+    width: 85%;
+    height: 51px;
+    border: none;
+    background-image: url("/Design/Assets/SVG/En\ chiffres-1.svg");
+    border-radius: 8px;
+    color: white;
+    font-size: 32px;
+}
