@@ -14,4 +14,14 @@
     border-radius: 8px;
     color: white;
     font-size: 32px;
+    img {
+        width: 30px;
+        padding-left: 10px;
+    }
+}
+
+@mixin resp($size) {
+    @media (max-width: #{$size}) {
+        @content;
+    }
 }

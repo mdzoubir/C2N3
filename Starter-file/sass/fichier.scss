@@ -17,6 +17,14 @@ body {
     .logo {
         margin-left: 10px;
         margin-top: 10px;
+        @include resp(392px) {
+            margin-left: 0px;
+        }
+        img {
+            @include resp(392px) {
+                width: 50%;
+            }
+        }
     }
     .menu {
         display: flex;
@@ -24,12 +32,28 @@ body {
         justify-content: space-around;
         &__element {
             margin-left: 30%;
+            @include resp(718px) {
+                margin-left: 10%;
+            }
+            @include resp(356px) {
+                margin-left: 0%;
+            }
             &--item {
                 margin: 0 30px;
+                @include resp(718px) {
+                    margin-left: 0%;
+                }
+                @include resp(392px) {
+                    font-size: 13px;
+                }
+            }
+            &--item1 {
+                color: rgb(106, 106, 224);
             }
             &--item3 {
                 border: solid 1.5px rgb(106, 106, 224);
                 border-radius: 8px;
+                color: rgb(106, 106, 224);
             }
         }
     }
@@ -40,6 +64,9 @@ body {
     margin: auto;
     background-color: yellow;
     padding: 20px;
+    &__tit {
+        color: rgb(106, 106, 224);
+    }
 }
 
 .content {
@@ -47,6 +74,10 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     text-align: center;
+    @include resp(900px) {
+        margin: 0;
+        display: block;
+    }
     &__colum1 {
         &--img1 {
             width: 90%;
@@ -71,6 +102,9 @@ body {
     width: 30%;
     text-align: center;
     margin: 20px auto;
+    @include resp(900px) {
+        width: 80%;
+    }
     &__symptomes1 {
         @include symb;
         margin-top: 15px;
@@ -97,16 +131,27 @@ body {
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(2, auto);
+    @include resp(750px) {
+        display: block;
+        text-align: center;
+    }
     .para {
         grid-row: 1/2;
         grid-column: 1/3;
         text-align: center;
+        @include resp(750px) {
+            margin: 10px 0;
+        }
     }
     &__part1 {
         grid-row: 2/3;
         grid-column: 2/3;
-        &--list {
-            li {}
+        @include resp(750px) {
+            font-size: 20px;
+            font-weight: 400;
+        }
+        @include resp(750px) {
+            font-size: 15px;
         }
     }
     &__part2 {
@@ -116,14 +161,17 @@ body {
         }
         &--par2 {
             background-image: url("/Design/Assets/png/En\ chiffres-3.png");
-            width: 50%;
-            margin: 30px auto;
+            width: 210px;
+            margin: 0px auto;
             color: rgb(80, 89, 184);
         }
         &--par3 {
             border-bottom: solid rgb(235, 212, 6) 2px;
-            width: 50%;
+            width: 210px;
             margin: auto;
+            @include resp(750px) {
+                display: none;
+            }
         }
     }
 }
@@ -144,6 +192,9 @@ body {
         width: 38%;
         margin-top: 0px;
         margin-bottom: 20px;
+        @include resp(580px) {
+            width: 200px;
+        }
     }
 }
 
@@ -155,6 +206,11 @@ body {
         display: flex;
         justify-content: space-around;
         font-size: 18px;
+        @include resp(800px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
         &--item1 {
             width: 100%;
             text-align: center;
@@ -163,9 +219,13 @@ body {
                     border: solid 1.5px rgb(106, 106, 224);
                     border-radius: 8px;
                     padding: 0;
-                    width: 15%;
+                    width: 70px;
                     margin: 10px auto;
                     list-style: none;
+                    @include resp(900px) {
+                        display: block;
+                        text-align: center;
+                    }
                 }
             }
         }
@@ -184,6 +244,12 @@ body {
         }
         &--item3 {
             color: #aaa6a6;
+            @include resp(800px) {
+                grid-row: 2/3;
+                grid-column: 1/3;
+                text-align: center;
+                font-weight: 400;
+            }
         }
     }
 }
