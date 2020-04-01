@@ -5,9 +5,7 @@
     "main": "index.js",
     "scripts": {
         "watch-sass": "node-sass sass/fichier.scss dist/css/style.css --watch",
-        "compile-sass": "node-sass sass/fichier.scss dist/css/style.comp.css",
-        "concat-css": "concat -o dist/css/style.css dist/css/style.min.css dist/css/style.comp.css",
-        "prefix-css": "postcss --use autoprefixer -b 'last 5 versions' ist/css/style.concat.css -o dist/css/style.prefix.css"
+        "compile-sass": "node-sass sass/fichier.scss dist/css/style.comp.css"
     },
     "author": "",
     "license": "ISC",
