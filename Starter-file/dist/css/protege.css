@@ -1,0 +1,45 @@
+.protege {
+  text-align: center; }
+  .protege p {
+    width: 25%;
+    margin: auto; }
+  .protege .otuils {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 80%;
+    margin: 20px auto;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px; }
+    .protege .otuils p {
+      width: 100%; }
+    .protege .otuils__add1 {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      margin-top: 35px; }
+    .protege .otuils__add3 {
+      margin-top: 13px; }
+    .protege .otuils__add4 {
+      margin-top: 25px; }
+    .protege .otuils__add5 {
+      margin-top: 30px; }
+    .protege .otuils__add7 {
+      grid-row: 3/4;
+      grid-column: 2/3; }
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  background-image: url("/Design/Assets/SVG/Merged bar-44.svg");
+  margin: 10px 0;
+  padding: 40px;
+  text-align: center; }
+  .info__par1--tut {
+    width: 70%;
+    margin: 15px auto; }
+  .info__par2 {
+    margin: 30px auto;
+    background-image: url("/Design/Assets/png/En chiffres-31.png");
+    color: white;
+    padding: 15px;
+    border-radius: 8px; }
