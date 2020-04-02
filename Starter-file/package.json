@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "compile-sass": "node-sass -w sass -o dist/css",
-        "concat": "concat -o dist/css/style.css dist/css/navbar.css dist/css/header.css",
+        "concat": "concat -o dist/css/style.css dist/css/navbar.css dist/css/header.css dist/css/section1.css dist/css/section2.css dist/css/section3.css dist/css/section4.css  dist/css/footer.css",
         "prefix": "postcss dist/css/style.css --use autoprefixer -d dist/css/prefixed",
         "build": "npm-run-all compile-sass  prefix concat"
     },

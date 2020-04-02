@@ -1,0 +1,55 @@
+@import "./mixin";
+.section2 {
+    background-image: url("/Design/Assets/png/En\ chiffres-1.png");
+    color: white;
+    font-size: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    @include resp(750px) {
+        display: block;
+        text-align: center;
+    }
+    .para {
+        grid-row: 1/2;
+        grid-column: 1/3;
+        text-align: center;
+        margin: 20px 0;
+        @include resp(750px) {
+            margin: 10px 0;
+        }
+    }
+    &__part1 {
+        padding-left: 50px;
+        margin-bottom: 20px;
+        @include resp(750px) {
+            font-size: 20px;
+            font-weight: 400;
+            padding-left: 0;
+        }
+        @include resp(750px) {
+            font-size: 15px;
+        }
+    }
+    &__part2 {
+        text-align: center;
+        &--par1 {
+            color: rgb(235, 212, 6);
+        }
+        &--par2 {
+            background-image: url("/Design/Assets/png/En\ chiffres-3.png");
+            width: 210px;
+            padding: 10px;
+            margin: 30px auto;
+            color: rgb(80, 89, 184);
+        }
+        &--par3 {
+            border-bottom: solid rgb(235, 212, 6) 2px;
+            width: 210px;
+            margin: auto;
+            @include resp(750px) {
+                display: none;
+            }
+        }
+    }
+}

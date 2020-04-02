@@ -1,0 +1,30 @@
+@import "./mixin";
+.content {
+    margin: 1% 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    font-size: 15px;
+    @include resp(900px) {
+        margin: 0;
+        display: block;
+    }
+    &__colum1 {
+        &--img1 {
+            width: 90%;
+        }
+    }
+    &__colum2 {
+        &--text1 {
+            color: rgb(91, 91, 253);
+            padding: 20px 0px;
+        }
+        &--text2 {
+            padding: 20px 0px;
+            color: rgb(114, 114, 119);
+        }
+        &--but {
+            @include btn;
+        }
+    }
+}

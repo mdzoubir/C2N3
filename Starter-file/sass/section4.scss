@@ -1,0 +1,25 @@
+@import "./mixin";
+.section3 {
+    background-image: url("/Design/Assets/SVG/Merged\ bar.svg");
+    text-align: center;
+    &__para {
+        color: rgb(80, 89, 184);
+        font-size: 30px;
+        padding-top: 5px;
+    }
+    &__img {
+        padding: 10px;
+    }
+    &__btn {
+        @include btn;
+        width: 35%;
+        margin-top: 0px;
+        margin-bottom: 20px;
+        @include resp(980px) {
+            width: 250px;
+            img {
+                display: none;
+            }
+        }
+    }
+}
