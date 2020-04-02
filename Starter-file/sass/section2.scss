@@ -2,25 +2,27 @@
 .section1 {
     width: 30%;
     text-align: center;
-    margin: 20px auto;
+    margin: 10px auto;
     @include resp(900px) {
         width: 80%;
     }
+    @include resp(900px) {
+        width: 100%;
+    }
     &__symptomes1 {
         @include symb;
-        margin-top: 15px;
-        &--element1 {
-            img {
-                margin: 15px;
-            }
+        &--element2 {
+            margin-top: 20px;
+        }
+        @include resp(400px) {
+            display: flex;
+            justify-content: space-around;
         }
     }
     &__symptomes2 {
         @include symb;
         &--ele2 {
-            img {
-                margin-top: 15px;
-            }
+            margin-top: 10px;
         }
     }
 }

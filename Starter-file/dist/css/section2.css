@@ -1,20 +1,36 @@
 .section1 {
   width: 30%;
   text-align: center;
-  margin: 20px auto; }
+  margin: 10px auto; }
   @media (max-width: 900px) {
     .section1 {
       width: 80%; } }
+  @media (max-width: 900px) {
+    .section1 {
+      width: 100%; } }
   .section1__symptomes1 {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    margin-top: 15px; }
-    .section1__symptomes1--element1 img {
-      margin: 15px; }
+    justify-content: space-around; }
+    @media (max-width: 400px) {
+      .section1__symptomes1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; } }
+    .section1__symptomes1--element2 {
+      margin-top: 20px; }
+    @media (max-width: 400px) {
+      .section1__symptomes1 {
+        display: flex;
+        justify-content: space-around; } }
   .section1__symptomes2 {
     display: flex;
     flex-direction: row;
     justify-content: space-around; }
-    .section1__symptomes2--ele2 img {
-      margin-top: 15px; }
+    @media (max-width: 400px) {
+      .section1__symptomes2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; } }
+    .section1__symptomes2--ele2 {
+      margin-top: 10px; }
