@@ -9,6 +9,9 @@
     @include resp(900px) {
         width: 100%;
     }
+    h1 {
+        color: $price;
+    }
     &__symptomes1 {
         @include symb;
         &--element2 {
@@ -24,5 +27,31 @@
         &--ele2 {
             margin-top: 10px;
         }
+    }
+    &__symptomes3 {
+        width: 100%;
+        margin: 20px auto;
+        color: $price;
+        &--pad {
+            @include symb;
+            .coro {
+                width: 50%;
+                position: relative;
+                .img2 {
+                    position: absolute;
+                    right: 38%;
+                    top: 25%;
+                }
+            }
+        }
+    }
+}
+
+.sym {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    @include resp(400px) {
+        width: 100%;
     }
 }

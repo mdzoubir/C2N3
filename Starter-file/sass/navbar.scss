@@ -36,7 +36,7 @@ body {
         justify-content: space-around;
         &__element {
             margin-left: 30%;
-            @include resp(718px) {
+            @include resp(800px) {
                 margin-left: 10%;
             }
             @include resp(356px) {
@@ -44,7 +44,7 @@ body {
             }
             &--item {
                 margin: 0 30px;
-                @include resp(718px) {
+                @include resp(800px) {
                     margin-left: 0%;
                 }
                 @include resp(392px) {
@@ -52,12 +52,12 @@ body {
                 }
             }
             &--item1 {
-                color: rgb(106, 106, 224);
+                color: $price;
             }
             &--item3 {
                 border: solid 1.5px rgb(106, 106, 224);
                 border-radius: 8px;
-                color: rgb(106, 106, 224);
+                color: $price;
                 img {
                     width: 15px;
                 }

@@ -1,9 +1,13 @@
+@import "./mixin";
 .dernier {
     text-align: center;
     margin: auto;
     background-color: yellow;
     padding: 20px;
+    @include resp(500px) {
+        font-weight: 400;
+    }
     &__tit {
-        color: rgb(106, 106, 224);
+        color: $price;
     }
 }

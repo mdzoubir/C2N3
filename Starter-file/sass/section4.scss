@@ -3,7 +3,7 @@
     background-image: url("/Design/Assets/SVG/Merged\ bar.svg");
     text-align: center;
     &__para {
-        color: rgb(80, 89, 184);
+        color: $price;
         font-size: 30px;
         padding-top: 5px;
     }

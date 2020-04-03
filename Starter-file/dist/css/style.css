@@ -30,7 +30,7 @@ body {
     justify-content: space-around; }
     .navbar .menu__element {
       margin-left: 30%; }
-      @media (max-width: 718px) {
+      @media (max-width: 800px) {
         .navbar .menu__element {
           margin-left: 10%; } }
       @media (max-width: 356px) {
@@ -38,18 +38,18 @@ body {
           margin-left: 0%; } }
       .navbar .menu__element--item {
         margin: 0 30px; }
-        @media (max-width: 718px) {
+        @media (max-width: 800px) {
           .navbar .menu__element--item {
             margin-left: 0%; } }
         @media (max-width: 392px) {
           .navbar .menu__element--item {
             font-size: 13px; } }
       .navbar .menu__element--item1 {
-        color: #6a6ae0; }
+        color: #1078AD; }
       .navbar .menu__element--item3 {
         border: solid 1.5px #6a6ae0;
         border-radius: 8px;
-        color: #6a6ae0; }
+        color: #1078AD; }
         .navbar .menu__element--item3 img {
           width: 15px; }
 
@@ -58,8 +58,11 @@ body {
   margin: auto;
   background-color: yellow;
   padding: 20px; }
+  @media (max-width: 500px) {
+    .dernier {
+      font-weight: 400; } }
   .dernier__tit {
-    color: #6a6ae0; }
+    color: #1078AD; }
 
 .content {
   margin: 1% 5%;
@@ -74,7 +77,7 @@ body {
   .content__colum1--img1 {
     width: 90%; }
   .content__colum2--text1 {
-    color: #5b5bfd;
+    color: #1078AD;
     padding: 20px 0px; }
   .content__colum2--text2 {
     padding: 20px 0px;
@@ -103,6 +106,8 @@ body {
   @media (max-width: 900px) {
     .section1 {
       width: 100%; } }
+  .section1 h1 {
+    color: #1078AD; }
   .section1__symptomes1 {
     display: flex;
     flex-direction: row;
@@ -129,6 +134,34 @@ body {
         justify-content: space-between; } }
     .section1__symptomes2--ele2 {
       margin-top: 10px; }
+  .section1__symptomes3 {
+    width: 100%;
+    margin: 20px auto;
+    color: #1078AD; }
+    .section1__symptomes3--pad {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; }
+      @media (max-width: 400px) {
+        .section1__symptomes3--pad {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between; } }
+      .section1__symptomes3--pad .coro {
+        width: 50%;
+        position: relative; }
+        .section1__symptomes3--pad .coro .img2 {
+          position: absolute;
+          right: 38%;
+          top: 25%; }
+
+.sym {
+  width: 40%;
+  margin: auto;
+  text-align: center; }
+  @media (max-width: 400px) {
+    .sym {
+      width: 100%; } }
 
 .section2 {
   background-image: url("/Design/Assets/png/En chiffres-1.png");
@@ -160,6 +193,8 @@ body {
     @media (max-width: 750px) {
       .section2__part1 {
         font-size: 15px; } }
+    .section2__part1 p {
+      color: black; }
   .section2__part2 {
     text-align: center; }
     .section2__part2--par1 {
@@ -169,7 +204,7 @@ body {
       width: 210px;
       padding: 10px;
       margin: 30px auto 0;
-      color: #5059b8; }
+      color: #1078AD; }
     .section2__part2--par3 {
       border-bottom: solid #ebd406 2px;
       width: 210px;
@@ -182,7 +217,7 @@ body {
   background-image: url("/Design/Assets/SVG/Merged bar.svg");
   text-align: center; }
   .section3__para {
-    color: #5059b8;
+    color: #1078AD;
     font-size: 30px;
     padding-top: 5px; }
   .section3__img {
@@ -226,7 +261,7 @@ body {
       width: 100%;
       text-align: center; }
       .footer__ele--item1 ul .tradiction {
-        border: solid 1.5px #6a6ae0;
+        border: solid 1.5px #1078AD;
         border-radius: 8px;
         padding: 0;
         width: 70px;
@@ -240,7 +275,7 @@ body {
       width: 100%;
       text-align: center; }
       .footer__ele--item2 .para1 {
-        color: #6a6ae0; }
+        color: #1078AD; }
       .footer__ele--item2 .para3 {
         color: #02b902; }
       .footer__ele--item2 .para5 {
@@ -255,16 +290,86 @@ body {
           font-weight: 400; } }
 
 .protege {
+  color: #1078AD;
   text-align: center; }
   .protege p {
     width: 25%;
     margin: auto; }
+    @media (max-width: 800px) {
+      .protege p {
+        width: 50%; } }
+    @media (max-width: 500px) {
+      .protege p {
+        width: 80%; } }
   .protege .otuils {
     display: grid;
-    grid-template-columns: repeat(3 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     width: 80%;
-    margin: auto; }
+    margin: 20px auto;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px; }
+    @media (max-width: 800px) {
+      .protege .otuils {
+        width: 100%; } }
+    @media (max-width: 500px) {
+      .protege .otuils {
+        isplay: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr); } }
+    .protege .otuils p {
+      width: 100%; }
     .protege .otuils__add1 {
       grid-column: 1/2;
-      grid-row: 1/2; }
+      grid-row: 1/2;
+      margin-top: 35px; }
+    .protege .otuils__add3 {
+      margin-top: 13px; }
+      @media (max-width: 500px) {
+        .protege .otuils__add3 {
+          margin-top: 0px; } }
+    .protege .otuils__add5 {
+      margin-top: 5px; }
+    @media (max-width: 500px) {
+      .protege .otuils__add6 {
+        grid-column: 2/3;
+        grid-row: 3/4; } }
+    .protege .otuils__add7 {
+      grid-row: 3/4;
+      grid-column: 2/3;
+      width: 100%; }
+      @media (max-width: 500px) {
+        .protege .otuils__add7 {
+          grid-row: 4/5;
+          grid-column: 1/3;
+          width: 50%;
+          margin: auto; } }
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  background-image: url("/Design/Assets/SVG/Merged bar-44.svg");
+  margin: 10px 0;
+  padding: 40px;
+  text-align: center; }
+  @media (max-width: 1102px) {
+    .info {
+      padding: 0px; } }
+  @media (max-width: 800px) {
+    .info {
+      display: block; } }
+  .info__par1 {
+    color: #1078AD; }
+    @media (max-width: 1030px) {
+      .info__par1 {
+        width: 50%; } }
+    .info__par1--tut {
+      width: 70%;
+      margin: 15px auto; }
+  .info__par2 {
+    margin: 30px auto;
+    background-image: url("/Design/Assets/png/En chiffres-31.png");
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    height: 35px; }

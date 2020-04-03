@@ -30,6 +30,9 @@
         @include resp(750px) {
             font-size: 15px;
         }
+        p {
+            color: black;
+        }
     }
     &__part2 {
         text-align: center;
@@ -41,7 +44,7 @@
             width: 210px;
             padding: 10px;
             margin: 30px auto 0;
-            color: rgb(80, 89, 184);
+            color: $price;
         }
         &--par3 {
             border-bottom: solid rgb(235, 212, 6) 2px;

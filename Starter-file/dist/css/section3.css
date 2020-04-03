@@ -28,6 +28,8 @@
     @media (max-width: 750px) {
       .section2__part1 {
         font-size: 15px; } }
+    .section2__part1 p {
+      color: black; }
   .section2__part2 {
     text-align: center; }
     .section2__part2--par1 {
@@ -37,7 +39,7 @@
       width: 210px;
       padding: 10px;
       margin: 30px auto 0;
-      color: #5059b8; }
+      color: #1078AD; }
     .section2__part2--par3 {
       border-bottom: solid #ebd406 2px;
       width: 210px;

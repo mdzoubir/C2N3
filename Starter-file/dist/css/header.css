@@ -3,5 +3,8 @@
   margin: auto;
   background-color: yellow;
   padding: 20px; }
+  @media (max-width: 500px) {
+    .dernier {
+      font-weight: 400; } }
   .dernier__tit {
-    color: #6a6ae0; }
+    color: #1078AD; }
