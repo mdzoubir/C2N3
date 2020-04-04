@@ -50,12 +50,13 @@ body {
                 @include resp(392px) {
                     font-size: 13px;
                 }
-            }
-            &--item1 {
-                color: $price;
+                a {
+                    text-decoration: none;
+                    color: $price;
+                }
             }
             &--item3 {
-                border: solid 1.5px rgb(106, 106, 224);
+                border: solid 1.5px $price;
                 border-radius: 8px;
                 color: $price;
                 img {

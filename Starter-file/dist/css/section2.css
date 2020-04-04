@@ -1,5 +1,5 @@
 .section1 {
-  width: 30%;
+  width: 40%;
   text-align: center;
   margin: 10px auto; }
   @media (max-width: 900px) {
@@ -40,6 +40,8 @@
     width: 100%;
     margin: 20px auto;
     color: #1078AD; }
+    .section1__symptomes3 h2 {
+      margin: 40px 0; }
     .section1__symptomes3--pad {
       display: flex;
       flex-direction: row;
@@ -54,8 +56,23 @@
         position: relative; }
         .section1__symptomes3--pad .coro .img2 {
           position: absolute;
-          right: 38%;
-          top: 25%; }
+          right: 40%;
+          top: 28%; }
+          @media (max-width: 900px) {
+            .section1__symptomes3--pad .coro .img2 {
+              right: 44%; } }
+          @media (max-width: 700px) {
+            .section1__symptomes3--pad .coro .img2 {
+              right: 42%; } }
+          @media (max-width: 500px) {
+            .section1__symptomes3--pad .coro .img2 {
+              right: 40%;
+              top: 26%; } }
+          @media (max-width: 375px) {
+            .section1__symptomes3--pad .coro .img2 {
+              right: 35%; } }
+      .section1__symptomes3--pad .pep {
+        margin-top: 9px; }
 
 .sym {
   width: 40%;

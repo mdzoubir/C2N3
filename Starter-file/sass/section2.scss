@@ -1,6 +1,6 @@
 @import "./mixin";
 .section1 {
-    width: 30%;
+    width: 40%;
     text-align: center;
     margin: 10px auto;
     @include resp(900px) {
@@ -32,6 +32,9 @@
         width: 100%;
         margin: 20px auto;
         color: $price;
+        h2 {
+            margin: 40px 0;
+        }
         &--pad {
             @include symb;
             .coro {
@@ -39,9 +42,25 @@
                 position: relative;
                 .img2 {
                     position: absolute;
-                    right: 38%;
-                    top: 25%;
+                    right: 40%;
+                    top: 28%;
+                    @include resp(900px) {
+                        right: 44%;
+                    }
+                    @include resp(700px) {
+                        right: 42%;
+                    }
+                    @include resp(500px) {
+                        right: 40%;
+                        top: 26%;
+                    }
+                    @include resp(375px) {
+                        right: 35%;
+                    }
                 }
+            }
+            .pep {
+                margin-top: 9px;
             }
         }
     }

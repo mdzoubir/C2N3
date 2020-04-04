@@ -25,6 +25,8 @@
           .footer__ele--item1 ul .tradiction {
             display: block;
             text-align: center; } }
+      .footer__ele--item1 ul li a {
+        text-decoration: none; }
     .footer__ele--item2 {
       width: 100%;
       text-align: center; }

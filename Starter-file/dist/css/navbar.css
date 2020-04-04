@@ -44,10 +44,11 @@ body {
         @media (max-width: 392px) {
           .navbar .menu__element--item {
             font-size: 13px; } }
-      .navbar .menu__element--item1 {
-        color: #1078AD; }
+        .navbar .menu__element--item a {
+          text-decoration: none;
+          color: #1078AD; }
       .navbar .menu__element--item3 {
-        border: solid 1.5px #6a6ae0;
+        border: solid 1.5px #1078AD;
         border-radius: 8px;
         color: #1078AD; }
         .navbar .menu__element--item3 img {
