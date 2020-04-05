@@ -24,6 +24,11 @@
             color: rgb(114, 114, 119);
         }
         &--but {
+            a {
+                text-decoration: none;
+                color: white;
+                font-family: "Cairo", sans-serif;
+            }
             @include btn;
         }
     }

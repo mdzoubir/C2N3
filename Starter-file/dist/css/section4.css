@@ -23,6 +23,10 @@
     .section3__btn img {
       width: 30px;
       padding-left: 10px; }
+    .section3__btn a {
+      text-decoration: none;
+      color: white;
+      font-family: "Cairo", sans-serif; }
     @media (max-width: 980px) {
       .section3__btn {
         width: 250px; }

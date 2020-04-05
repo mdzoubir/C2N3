@@ -1,0 +1,35 @@
+.preambule__img {
+  width: 50%;
+  margin-left: 25%; }
+  @media (max-width: 550px) {
+    .preambule__img {
+      width: 75%;
+      margin-left: 12.5%; } }
+
+.preambule__text {
+  width: 90%;
+  margin: 20px auto;
+  background-image: url("/Design/Assets/png/Rectangle 1131.png");
+  padding: 40px;
+  line-height: 30px;
+  text-align: center;
+  font-weight: 400;
+  border-radius: 8px; }
+  @media (max-width: 1000px) {
+    .preambule__text {
+      width: 80%; } }
+  @media (max-width: 400px) {
+    .preambule__text {
+      width: 70%; } }
+  .preambule__text--tit {
+    color: #1078AD; }
+  .preambule__text hr {
+    width: 30%;
+    margin: 10px auto;
+    background-color: #F4CF1B;
+    border: none;
+    height: 5px;
+    border-radius: 100%; }
+    @media (max-width: 1000px) {
+      .preambule__text hr {
+        width: 60%; } }

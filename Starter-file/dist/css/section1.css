@@ -26,6 +26,10 @@
     border-radius: 8px;
     color: white;
     font-size: 32px; }
+    .content__colum2--but a {
+      text-decoration: none;
+      color: white;
+      font-family: "Cairo", sans-serif; }
     .content__colum2--but img {
       width: 30px;
       padding-left: 10px; }
