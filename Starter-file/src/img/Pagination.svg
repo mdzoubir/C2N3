@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="218" height="31" viewBox="0 0 218 31">
+  <g id="Pagination" transform="translate(-431 -120)">
+    <text id="Informations" transform="translate(451 147)" fill="#222" font-size="7" font-family="Cairo-Bold, Cairo" font-weight="700"><tspan x="-19.688" y="0">Informations</tspan></text>
+    <text id="Questionnaire" transform="translate(546 147)" fill="#222" font-size="7" font-family="Cairo-Bold, Cairo" font-weight="700"><tspan x="-21.343" y="0">Questionnaire</tspan></text>
+    <text id="Résultats" transform="translate(634 147)" fill="#222" font-size="7" font-family="Cairo-Bold, Cairo" font-weight="700"><tspan x="-14.448" y="0">Résultats</tspan></text>
+    <rect id="Rectangle_732" data-name="Rectangle 732" width="176" height="2" transform="translate(459 128)" fill="#026534"/>
+    <circle id="Ellipse_271" data-name="Ellipse 271" cx="9.5" cy="9.5" r="9.5" transform="translate(536 120)" fill="#88b7d3"/>
+    <circle id="Ellipse_270" data-name="Ellipse 270" cx="2.5" cy="2.5" r="2.5" transform="translate(451 126)" fill="#1078ad"/>
+    <circle id="Ellipse_275" data-name="Ellipse 275" cx="2.5" cy="2.5" r="2.5" transform="translate(543 127)" fill="#f4cf1b"/>
+    <path id="Path_198" data-name="Path 198" d="M2.5,0A2.5,2.5,0,1,1,0,2.5,2.5,2.5,0,0,1,2.5,0Z" transform="translate(638 126)" fill="#1078ad"/>
+  </g>
+</svg>

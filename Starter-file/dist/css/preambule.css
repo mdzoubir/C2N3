@@ -1,6 +1,7 @@
 .preambule__img {
   width: 50%;
-  margin-left: 25%; }
+  margin-left: 25%;
+  margin-top: 20px; }
   @media (max-width: 550px) {
     .preambule__img {
       width: 75%;
@@ -26,10 +27,17 @@
   .preambule__text hr {
     width: 30%;
     margin: 10px auto;
-    background-color: #F4CF1B;
+    background-color: #f4cf1b;
     border: none;
     height: 5px;
     border-radius: 100%; }
     @media (max-width: 1000px) {
       .preambule__text hr {
         width: 60%; } }
+
+.w3-light-grey {
+  width: 50%;
+  margin: 10px auto;
+  border-radius: 8px; }
+  .w3-light-grey p {
+    color: black; }

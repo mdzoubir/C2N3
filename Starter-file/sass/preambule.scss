@@ -3,6 +3,7 @@
     &__img {
         width: 50%;
         margin-left: 25%;
+        margin-top: 20px;
         @include resp(550px) {
             width: 75%;
             margin-left: 12.5%;
@@ -29,7 +30,7 @@
         hr {
             width: 30%;
             margin: 10px auto;
-            background-color: #F4CF1B;
+            background-color: #f4cf1b;
             border: none;
             height: 5px;
             border-radius: 100%;
@@ -37,5 +38,14 @@
                 width: 60%;
             }
         }
+    }
+}
+
+.w3-light-grey {
+    width: 50%;
+    margin: 10px auto;
+    border-radius: 8px;
+    p {
+        color: black;
     }
 }

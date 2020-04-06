@@ -1,0 +1,50 @@
+@import "./mixin";
+.fle {
+    width: 50%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    @include resp(600px) {
+        width: 70%;
+    }
+    @include resp(454px) {
+        width: 95%;
+    }
+    p {
+        @include resp(454px) {
+            margin-top: 6px;
+        }
+    }
+    .progresse {
+        width: 90%;
+        height: 20px;
+        background-color: #f3ebeb;
+        margin: 10px auto;
+        border-radius: 8px;
+        &__sen {
+            width: 4.16%;
+            height: 20px;
+            background-color: blue;
+            border-radius: 8px;
+        }
+    }
+}
+
+.quize1 {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    @include resp(600px) {
+        width: 95%;
+    }
+    &__put {
+        margin: 20px auto;
+        display: flex;
+        justify-content: space-around;
+        @include resp(600px) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+    }
+}
