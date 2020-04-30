@@ -12,31 +12,3 @@
   @media (max-width: 454px) {
     .fle p {
       margin-top: 6px; } }
-  .fle .progresse {
-    width: 90%;
-    height: 20px;
-    background-color: #f3ebeb;
-    margin: 10px auto;
-    border-radius: 8px; }
-    .fle .progresse__sen {
-      width: 4.16%;
-      height: 20px;
-      background-color: blue;
-      border-radius: 8px; }
-
-.quize1 {
-  width: 60%;
-  margin: auto;
-  text-align: center; }
-  @media (max-width: 600px) {
-    .quize1 {
-      width: 95%; } }
-  .quize1__put {
-    margin: 20px auto;
-    display: flex;
-    justify-content: space-around; }
-    @media (max-width: 600px) {
-      .quize1__put {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end; } }

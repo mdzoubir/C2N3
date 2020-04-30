@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="/Starter-file/dist/css/preambule.css" />
     <!-- font family -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet" />
+    <!-- font-awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
 
 <body>
@@ -27,25 +29,74 @@
         </div>
     </div>
     <div class="preambule">
+        <!-- img -->
         <img class="preambule__img" src="/Starter-file/src/img/Capturee.PNG" alt="" />
-        <div class="preambule__text">
-            <h2 class="preambule__text--tit">Préambule</h2>
-            <p class="preambule__text--para1">
-                « L’application est fournie à titre gratuit, en l’état, uniquement à des fins d’information pour contribuer à fluidifier la prise en charge des personnes par les services d’urgences pendant l’épidémie de Coronavirus COVID-19. L’exhaustivité, l’exactitude,
-                le caractère à jour des informations et contenus mis à disposition dans cette application, ou leur adéquation à des finalités particulières, ne sont pas garantis.
-            </p>
-            <hr>
-            <p class="preambule__text--para2">
-                L’utilisation de l’application et de son contenu ne remplace en aucun cas le conseil nécessaire donné par votre médecin ou votre pharmacien ou tout autre professionnel de santé compétent dans chaque cas particulier. Tout examen ou décision de l’utilisateur
-                doit être réalisé ou prise de manière autonome sur la base de l’information scientifique et clinique pertinente, de la notice officielle du produit concerné le cas échéant et en cas de doute, en consultant un médecin compétent.
-            </p>
+        <!-- container -->
+        <div class="preambule__text" id="paragraph">
+            <div>
+                <span>
+                    <h3>Préambule </h3>
+                </span>
+                <p class="preambule__text--para1">
+                    « L’application est fournie à titre gratuit, en l’état, uniquement à des fins d’information pour contribuer à fluidifier la prise en charge des personnes par les services d’urgences pendant l’épidémie de Coronavirus COVID-19. L’exhaustivité, l’exactitude,
+                    le caractère à jour des informations et contenus mis à disposition dans cette application, ou leur adéquation à des finalités particulières, ne sont pas garantis.
+
+                    <hr /> L’utilisation de l’application et de son contenu ne remplace en aucun cas le conseil nécessaire donné par votre médecin ou votre pharmacien ou tout autre professionnel de santé compétent dans chaque cas particulier. Tout examen ou
+                    décision de l’utilisateur doit être réalisé ou prise de manière autonome sur la base de l’information scientifique et clinique pertinente, de la notice officielle du produit concerné le cas échéant et en cas de doute, en consultant
+                    un médecin compétent.
+                </p>
+            </div>
+        </div>
+        <!---------------------------------- question -->
+
+
+        <div style="background: none;" class="section3 next">
+            <button class="section3__btn" id="clicked" onclick="newFunction()">
+                Demarer le test
+            </button>
         </div>
     </div>
-    <div style="background: none" class="section3">
-        <button class="section3__btn">
-            <a href="./quize/quize1.html"> Demarer le test</a>
-        </button>
+    <!-- _______________________________ -->
+    <div class="container" id="test">
+        <div class="score">
+            <p> 1/22</p>
+            <div id="scoreCard">
+                <div class="score-type">
+                </div>
+            </div>
+        </div>
+
+        <p class="question"></p>
+
+        <!-- ---------------------------------------------------- -->
+        <div class="inpp">
+            <div>
+                <input type="radio" name="choix" id="oui" class="lab" onclick="suiv()" />
+                <label for="oui">
+            <i class="fas fa-check"></i>
+            <span>Oui</span>
+             </label>
+            </div>
+
+            <div>
+                <input type="radio" name="choix" id="non" class="lab" onclick="suiv()" />
+                <label for="non">
+            <i class="fas fa-times"></i>
+            <span>Non</span>
+                   </label>
+            </div>
+        </div>
+        <div class="boott">
+            <button _ngcontent-sum-c96="" class="btn ent" onclick="previous()" id="prece">
+                Précédent
+            </button>
+            <button _ngcontent-sum-c96="" class="btn sor" onclick="next()" id="button" for="radio">
+                Suivant
+            </button>
+        </div>
     </div>
+
+    <!-- ezyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy -->
     <div class="section2">
         <p class="para">Recommandations officielles</p>
         <div class="section2__part1">
@@ -94,6 +145,8 @@
             </div>
         </div>
     </div>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
