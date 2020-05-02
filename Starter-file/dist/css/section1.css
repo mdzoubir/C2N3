@@ -25,7 +25,8 @@
     background-image: url("/Design/Assets/SVG/En chiffres-1.svg");
     border-radius: 8px;
     color: white;
-    font-size: 32px; }
+    font-size: 32px;
+    cursor: pointer; }
     .content__colum2--but a {
       text-decoration: none;
       color: white;

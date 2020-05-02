@@ -41,9 +41,10 @@
                     « L’application est fournie à titre gratuit, en l’état, uniquement à des fins d’information pour contribuer à fluidifier la prise en charge des personnes par les services d’urgences pendant l’épidémie de Coronavirus COVID-19. L’exhaustivité, l’exactitude,
                     le caractère à jour des informations et contenus mis à disposition dans cette application, ou leur adéquation à des finalités particulières, ne sont pas garantis.
 
-                    <hr /> L’utilisation de l’application et de son contenu ne remplace en aucun cas le conseil nécessaire donné par votre médecin ou votre pharmacien ou tout autre professionnel de santé compétent dans chaque cas particulier. Tout examen ou
-                    décision de l’utilisateur doit être réalisé ou prise de manière autonome sur la base de l’information scientifique et clinique pertinente, de la notice officielle du produit concerné le cas échéant et en cas de doute, en consultant
-                    un médecin compétent.
+                    <hr />
+                    <p class=" preambule__text--para1 "> L’utilisation de l’application et de son contenu ne remplace en aucun cas le conseil nécessaire donné par votre médecin ou votre pharmacien ou tout autre professionnel de santé compétent dans chaque cas particulier. Tout examen ou
+                        décision de l’utilisateur doit être réalisé ou prise de manière autonome sur la base de l’information scientifique et clinique pertinente, de la notice officielle du produit concerné le cas échéant et en cas de doute, en consultant
+                        un médecin compétent.</p>
                 </p>
             </div>
         </div>
@@ -59,9 +60,9 @@
     <!-- _______________________________ -->
     <div class="container" id="test">
         <div class="score">
-            <p> 1/22</p>
+            <p id="scorepr"></p>
             <div id="scoreCard">
-                <div class="score-type">
+                <div class="score-type" id="scoreNem">
                 </div>
             </div>
         </div>
@@ -70,21 +71,6 @@
 
         <!-- ---------------------------------------------------- -->
         <div class="inpp">
-            <div>
-                <input type="radio" name="choix" id="oui" class="lab" onclick="suiv()" />
-                <label for="oui">
-            <i class="fas fa-check"></i>
-            <span>Oui</span>
-             </label>
-            </div>
-
-            <div>
-                <input type="radio" name="choix" id="non" class="lab" onclick="suiv()" />
-                <label for="non">
-            <i class="fas fa-times"></i>
-            <span>Non</span>
-                   </label>
-            </div>
         </div>
         <div class="boott">
             <button _ngcontent-sum-c96="" class="btn ent" onclick="previous()" id="prece">
