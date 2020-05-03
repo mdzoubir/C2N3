@@ -5,13 +5,14 @@ var scoreCard = document.querySelector("#scoreCard");
 var button = document.getElementById("button");
 var ipt1 = document.querySelector(".inpp");
 // var ipt2 = document.getElementById("non");
-var prece = document.getElementById('prece');
-var scoreNem = document.getElementById('scoreNem');
-var scorePr = document.getElementById('scorepr');
-var para = document.getElementById('paragraph');
-var blo = document.getElementById('clicked');
+var prece = document.getElementById("prece");
+var scoreNem = document.getElementById("scoreNem");
+var scorePr = document.getElementById("scorepr");
+var para = document.getElementById("paragraph");
+var blo = document.getElementById("clicked");
 var dom = document.getElementsByClassName("preambule");
 
+var etape = document.querySelectorAll('.etape h5')
 
 
 var app = {
@@ -89,87 +90,151 @@ var app = {
             button.disabled = true;
             ipt1.innerHTML = "";
             ipt1.innerHTML += `
-        <div>
-            <input type="radio" name="choice" id="oui" value="" class="lab">
-            <label for="oui">
-                <i class="fas fa-check"></i>
-                <span>Oui</span>
-             </label>
-        </div>
-        <div>
-        <input type="radio" name="choice" id="non" class="lab">
-        <label for="non">
-            <i class="fas fa-times""></i>
-            <span>Non</span>
-         </label>
-        </div>`;
+                        <div>
+                            <input type="radio" name="choice" id="oui" class="lab">
+                            <label for="oui">
+                                <i class="fas fa-check"></i>
+                                <span>Oui</span>
+                            </label>
+                        </div>
+                        <div>
+                        <input type="radio" name="choice" id="non" class="lab">
+                        <label for="non">
+                            <i class="fas fa-times""></i>
+                            <span>Non</span>
+                        </label>
+                        </div>`;
             if (this.index === 1) {
-                question.innerHTML = this.questions[this.index].q;
-                button.disabled = true;
-                ipt1.innerHTML = "";
-                ipt1.innerHTML = `
-                <input type ="number" min = "34" max = "42" placeholder = "34-42" id = "inputTom">
-                    <span id = "inputDeg" >
-                    degrés </span>`;
-            }
-        } else {
 
+                ipt1.innerHTML = `<input type="number" min="34" max="42" placeholder="34-42" id ="inputTom">
+                                    <span id = "inputDeg" >
+                                    degrés </span>`;
+            } else if (this.index === 9) {
+                ipt1.innerHTML = "";
+                ipt1.innerHTML += `<div class="imoji">
+                                                <div class="pre">
+                                                    <input type="radio" name="choice" id="oui" class="like">
+                                                    <label for="oui">
+                                                        <i class="far fa-laugh"> </i>
+                                                        <span> Bien </span> 
+                                                    </label>
+                                                </div>
+                                                <div class="dos">
+                                                    <input type="radio" name="choice" id="non" class="like">
+                                                    <label label for="non" >
+                                                        <i class="far fa-smile-beam"></i>
+                                                    <span> Assez bien </span> 
+                                                    </label>
+                                                </div>
+                                                <div class="tro">
+                                                    <input type="radio" name="choice" id="aba" class="like">
+                                                    <label for="aba">
+                                                        <i class="far fa-frown"></i>
+                                                    <span> Fatigué(e) </span> 
+                                                    </label>
+                                                 </div>
+                                                 <div class="cat">
+                                                    <input type="radio" name="choice" id="ana" class="like">
+                                                    <label for="ana">
+                                                        <i class="far fa-dizzy"></i>
+                                                    <span> Très fatigué(e) </span> 
+                                                    </label>
+                                                </div>
+                                   </div>`;
+
+            } else if (this.index === 10) {
+                ipt1.innerHTML = `<input type="number" min="15" max="110" placeholder="15-110" id ="inputTom">
+                                    <span id = "inputDeg" >
+                                    ans </span>`;
+            } else if (this.index === 11) {
+                ipt1.innerHTML = `<input type="number" min="20" max="250" placeholder="20-250" id ="inputTom">
+                                    <span id = "inputDeg" >
+                                    Kg </span>`;
+            } else if (this.index === 12) {
+                ipt1.innerHTML = `<input type="number" min="80" max="250" placeholder="80-250" id ="inputTom">
+                                    <span id = "inputDeg" >
+                                    cm </span>`;
+            } else if (this.index === 19) {
+                ipt1.innerHTML = "";
+                ipt1.innerHTML += `
+                        <div>
+                            <input type="radio" name="choice" id="oui" class="lab">
+                            <label for="oui">
+                                <i class="fas fa-check"></i>
+                                <span>Oui</span>
+                            </label>
+                        </div>
+                        <div>
+                        <input type="radio" name="choice" id="non" class="lab">
+                        <label for="non">
+                            <i class="fas fa-times""></i>
+                            <span>Non</span>
+                        </label>
+                        </div>
+                        <div>
+                        <input type="radio" name="choice" id="hom" class="lab">
+                        <label for="hom">
+                            <i class="fas fa-male"></i>
+                            <span>Homme</span>
+                        </label>
+                        </div>`;
+            } else if (this.index === 21) {
+                button.innerHTML = "Terminer le test"
+            }
         }
     },
 
     next: function() {
         this.index++;
         this.load();
-
-
     },
     previous: function() {
         this.index--;
         this.load();
-
-
     },
     scoreB: function() {
-        scoreNem.style.width = (this.index + 1) * 100 / 22 + '%';
-        scorePr.innerHTML = this.index + 1 + "/" + this.questions.length
+        if (this.index <= 21) {
+            scoreNem.style.width = ((this.index + 1) * 100) / 22 + "%";
+            scorePr.innerHTML = this.index + 1 + "/" + this.questions.length;
+        }
     },
-
+    lob: function() {
+        if (this.index > 0) {
+            prece.style.visibility = 'visible'
+        }
+    },
 };
 window.onload = app.load();
 window.onload = app.scoreB();
 
-
 function next() {
     app.next();
-    prece.style.visibility = 'visible';
-    app.scoreB()
-
+    app.scoreB();
 }
 
 function previous() {
     app.previous();
-    app.scoreB()
+    app.scoreB();
 }
-
 
 function newFunction() {
     para.style.display = "none";
     blo.style.display = "none";
-    document.getElementById('test').style.display = "block"
-};
-
-
-
-
-
-function suiv() {
-    button.disabled = false;
-    button.style.opacity = 1;
-    button.style.cursor = "pointer"
+    document.getElementById("test").style.display = "block";
+    etape[0].classList.remove('ball');
+    etape[1].classList.add('ball');
 }
-ipt1.addEventListener('change', (event) => {
+
+// function suiv() {
+//     button.disabled = false;
+//     button.style.opacity = 1;
+//     button.style.cursor = "pointer";
+// }
+
+
+ipt1.addEventListener("change", (event) => {
     const input = event.target;
-    if (input.type === 'radio') {
+    if (input.type === "radio") {
         button.disabled = false;
     } else {
         button.disabled = false;
