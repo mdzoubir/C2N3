@@ -12,9 +12,7 @@ var para = document.getElementById("paragraph");
 var blo = document.getElementById("clicked");
 var dom = document.getElementsByClassName("preambule");
 
-var etape = document.querySelectorAll('.etape h5')
-
-
+var etape = document.querySelectorAll(".etape h5");
 var app = {
     questions: [{
             q: "Pensez-vous avoir ou avoir eu de la fièvre ces 10 derniers jours (frissons, sueurs) ?",
@@ -105,7 +103,6 @@ var app = {
                         </label>
                         </div>`;
             if (this.index === 1) {
-
                 ipt1.innerHTML = `<input type="number" min="34" max="42" placeholder="34-42" id ="inputTom">
                                     <span id = "inputDeg" >
                                     degrés </span>`;
@@ -141,7 +138,6 @@ var app = {
                                                     </label>
                                                 </div>
                                    </div>`;
-
             } else if (this.index === 10) {
                 ipt1.innerHTML = `<input type="number" min="15" max="110" placeholder="15-110" id ="inputTom">
                                     <span id = "inputDeg" >
@@ -179,7 +175,7 @@ var app = {
                         </label>
                         </div>`;
             } else if (this.index === 21) {
-                button.innerHTML = "Terminer le test"
+                button.innerHTML = "Terminer le test";
             }
         }
     },
@@ -187,20 +183,26 @@ var app = {
     next: function() {
         this.index++;
         this.load();
+        if (this.index < 21) {
+            button.innerHTML = "Suivans";
+            if (this.index > 0) {
+                prece.style.visibility = "visible";
+            }
+        } else if (this.index >= 21) {
+            button.innerHTML = "Terminer le Test";
+        }
     },
     previous: function() {
         this.index--;
         this.load();
+        if (this.index > 0) {
+            prece.style.visibility = "visible";
+        }
     },
     scoreB: function() {
         if (this.index <= 21) {
             scoreNem.style.width = ((this.index + 1) * 100) / 22 + "%";
             scorePr.innerHTML = this.index + 1 + "/" + this.questions.length;
-        }
-    },
-    lob: function() {
-        if (this.index > 0) {
-            prece.style.visibility = 'visible'
         }
     },
 };
@@ -220,17 +222,11 @@ function previous() {
 function newFunction() {
     para.style.display = "none";
     blo.style.display = "none";
+    button.innerHTML = "Suivans";
     document.getElementById("test").style.display = "block";
-    etape[0].classList.remove('ball');
-    etape[1].classList.add('ball');
+    etape[0].classList.remove("ball");
+    etape[1].classList.add("ball");
 }
-
-// function suiv() {
-//     button.disabled = false;
-//     button.style.opacity = 1;
-//     button.style.cursor = "pointer";
-// }
-
 
 ipt1.addEventListener("change", (event) => {
     const input = event.target;
