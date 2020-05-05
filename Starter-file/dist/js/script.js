@@ -4,15 +4,16 @@ var question = document.querySelector(".question");
 var scoreCard = document.querySelector("#scoreCard");
 var button = document.getElementById("button");
 var ipt1 = document.querySelector(".inpp");
-// var ipt2 = document.getElementById("non");
 var prece = document.getElementById("prece");
 var scoreNem = document.getElementById("scoreNem");
 var scorePr = document.getElementById("scorepr");
 var para = document.getElementById("paragraph");
 var blo = document.getElementById("clicked");
 var dom = document.getElementsByClassName("preambule");
-
 var etape = document.querySelectorAll(".etape h5");
+var btn = document.querySelector('.btn')
+
+
 var app = {
     questions: [{
             q: "Pensez-vous avoir ou avoir eu de la fièvre ces 10 derniers jours (frissons, sueurs) ?",
@@ -232,6 +233,9 @@ ipt1.addEventListener("change", (event) => {
     const input = event.target;
     if (input.type === "radio") {
         button.disabled = false;
+        btn.addEventListener('onmouseout', () => {
+            btn.style.backgroundColor = '#1078ad';
+        });
     } else {
         button.disabled = false;
     }

@@ -7,7 +7,7 @@
 body {
     font-family: "Cairo", sans-serif;
     font-size: 20px;
-    font-weight: 700;
+    // font-weight: 700;
     width: 100%;
     @include resp(450px) {
         font-size: 15px;
