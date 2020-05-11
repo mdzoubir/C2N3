@@ -11,8 +11,7 @@ var para = document.getElementById("paragraph");
 var blo = document.getElementById("clicked");
 var dom = document.getElementsByClassName("preambule");
 var etape = document.querySelectorAll(".etape h5");
-var btn = document.querySelector('.btn')
-
+var btn = document.querySelector(".btn");
 
 var app = {
     questions: [{
@@ -86,53 +85,56 @@ var app = {
     load: function() {
         if (this.index < 21) {
             question.innerHTML = this.questions[this.index].q;
-            button.disabled = true;
+            // button.disabled = true;
             ipt1.innerHTML = "";
             ipt1.innerHTML += `
-                        <div>
-                            <input type="radio" name="choice" id="oui" class="lab">
+                         <div>
+                            <input type="radio" name="choice" id="oui" class="lab" value="oui">
                             <label for="oui">
                                 <i class="fas fa-check"></i>
                                 <span>Oui</span>
                             </label>
                         </div>
                         <div>
-                        <input type="radio" name="choice" id="non" class="lab">
+                        <input type="radio" name="choice" id="non" class="lab" value="non">
                         <label for="non">
                             <i class="fas fa-times""></i>
                             <span>Non</span>
                         </label>
                         </div>`;
+
             if (this.index === 1) {
-                ipt1.innerHTML = `<input type="number" min="34" max="42" placeholder="34-42" id ="inputTom">
-                                    <span id = "inputDeg" >
-                                    degrés </span>`;
+                ipt1.innerHTML = `
+                                    <input type="number" min="34" max="42" placeholder="34-42" id="inputTom">
+                                    <span id="inputDeg" >
+                                    degrés </span>
+                                    `;
             } else if (this.index === 9) {
                 ipt1.innerHTML = "";
                 ipt1.innerHTML += `<div class="imoji">
                                                 <div class="pre">
-                                                    <input type="radio" name="choice" id="oui" class="like">
+                                                    <input type="radio" name="choice" id="oui" class="like lab" value="Bien">
                                                     <label for="oui">
                                                         <i class="far fa-laugh"> </i>
                                                         <span> Bien </span> 
                                                     </label>
                                                 </div>
                                                 <div class="dos">
-                                                    <input type="radio" name="choice" id="non" class="like">
+                                                    <input type="radio" name="choice" id="non" class="like lab" value="Assez bien">
                                                     <label label for="non" >
                                                         <i class="far fa-smile-beam"></i>
                                                     <span> Assez bien </span> 
                                                     </label>
                                                 </div>
                                                 <div class="tro">
-                                                    <input type="radio" name="choice" id="aba" class="like">
+                                                    <input type="radio" name="choice" id="aba" class="like lab" value="Fatigué(e)">
                                                     <label for="aba">
                                                         <i class="far fa-frown"></i>
                                                     <span> Fatigué(e) </span> 
                                                     </label>
                                                  </div>
                                                  <div class="cat">
-                                                    <input type="radio" name="choice" id="ana" class="like">
+                                                    <input type="radio" name="choice" id="ana" class="like lab" value="Très fatigué(e)">
                                                     <label for="ana">
                                                         <i class="far fa-dizzy"></i>
                                                     <span> Très fatigué(e) </span> 
@@ -140,29 +142,29 @@ var app = {
                                                 </div>
                                    </div>`;
             } else if (this.index === 10) {
-                ipt1.innerHTML = `<input type="number" min="15" max="110" placeholder="15-110" id ="inputTom">
+                ipt1.innerHTML = `<input type="number" min="15" max="110" placeholder="15-110" id="inputTom">
                                     <span id = "inputDeg" >
                                     ans </span>`;
             } else if (this.index === 11) {
-                ipt1.innerHTML = `<input type="number" min="20" max="250" placeholder="20-250" id ="inputTom">
+                ipt1.innerHTML = `<input type="number" min="20" max="250" placeholder="20-250" id="inputTom">
                                     <span id = "inputDeg" >
                                     Kg </span>`;
             } else if (this.index === 12) {
-                ipt1.innerHTML = `<input type="number" min="80" max="250" placeholder="80-250" id ="inputTom">
+                ipt1.innerHTML = `<input type="number" min="80" max="250" placeholder="80-250" id="inputTom">
                                     <span id = "inputDeg" >
                                     cm </span>`;
             } else if (this.index === 19) {
                 ipt1.innerHTML = "";
                 ipt1.innerHTML += `
                         <div>
-                            <input type="radio" name="choice" id="oui" class="lab">
+                            <input type="radio" name="choice" id="oui" class="lab" value="oui">
                             <label for="oui">
                                 <i class="fas fa-check"></i>
                                 <span>Oui</span>
                             </label>
                         </div>
                         <div>
-                        <input type="radio" name="choice" id="non" class="lab">
+                        <input type="radio" name="choice" id="non" class="lab" value="non">
                         <label for="non">
                             <i class="fas fa-times""></i>
                             <span>Non</span>
@@ -179,6 +181,11 @@ var app = {
                 button.innerHTML = "Terminer le test";
             }
         }
+        if (this.index === 0) {
+            prece.style.visibility = "hidden";
+        } else {
+            prece.style.visibility = "visible";
+        }
     },
 
     next: function() {
@@ -186,9 +193,6 @@ var app = {
         this.load();
         if (this.index < 21) {
             button.innerHTML = "Suivans";
-            if (this.index > 0) {
-                prece.style.visibility = "visible";
-            }
         } else if (this.index >= 21) {
             button.innerHTML = "Terminer le Test";
         }
@@ -196,9 +200,6 @@ var app = {
     previous: function() {
         this.index--;
         this.load();
-        if (this.index > 0) {
-            prece.style.visibility = "visible";
-        }
     },
     scoreB: function() {
         if (this.index <= 21) {
@@ -213,11 +214,13 @@ window.onload = app.scoreB();
 function next() {
     app.next();
     app.scoreB();
+    suiveQuetion();
 }
 
 function previous() {
     app.previous();
     app.scoreB();
+    // preceQuetion();
 }
 
 function newFunction() {
@@ -227,16 +230,107 @@ function newFunction() {
     document.getElementById("test").style.display = "block";
     etape[0].classList.remove("ball");
     etape[1].classList.add("ball");
+    // suiveQuetion();
 }
 
-ipt1.addEventListener("change", (event) => {
-    const input = event.target;
-    if (input.type === "radio") {
-        button.disabled = false;
-        btn.addEventListener('onmouseout', () => {
-            btn.style.backgroundColor = '#1078ad';
-        });
+// ipt1.addEventListener("change", (event) => {
+//     const input = event.target;
+//     if (input.type === "radio") {
+//         button.disabled = false;
+//         btn.addEventListener("onmouseout", () => {
+//             btn.style.backgroundColor = "#1078ad";
+//         });
+//     } else {
+//         button.disabled = false;
+//     }
+// });
+
+// // afficher next questions
+
+// function suiveQuetion() {
+//     var inputTom = document.querySelector("#inputTom");
+//     if (ipt1.children[0].id === "inputTom") {
+//         if (inputTom.value === " ") {
+//             alert("SVP choisir une valeur");
+//             return;
+//         } else if (
+//             this.index === 1 &&
+//             (inputTom.value < 34 || inputTom.value > 42)
+//         ) {
+//             alert("la temperature doit etre comprise entre 34 et 42");
+//             return;
+//         } else if (
+//             this.index === 10 &&
+//             (inputTom.value < 15 || inputTom.value > 110)
+//         ) {
+//             alert("l'age doit etre comprise entre 15 et 110");
+//             return;
+//         } else if (
+//             this.index === 11 &&
+//             (inputTom.value < 20 || inputTom.value > 250)
+//         ) {
+//             alert("le poids doit etre comprise entre 20 et 250");
+//             return;
+//         } else if (
+//             this.index === 12 &&
+//             (inputTom.value < 80 || inputTom.value > 250)
+//         ) {
+//             alert("la taille doit etre compris entre 80 et 250");
+//             return;
+//         } else {
+//             var number = parseFloat(inputTom.value);
+//             valeurs.push(number);
+//             console.log(valeurs);
+//         }
+//     } else {
+//         var selectR = document.querySelectorAll('input[type="radio"]:checked');
+//         if (!selectR) {
+//             alert("SVP choisir une reponse!");
+//             return;
+//         } else {
+//             var value = selectR.getAttribute("value");
+//             valeurs.push(value);
+//             console.log(valeurs);
+//         }
+//     }
+//     this.index++;
+// }
+
+// function preceQuetion() {
+//     this.index--;
+//     valeurs.pop(this.index); // supprimer la reponse enregister a la fin de tableau s'il ya un retour vers la question precedente (modification)
+
+//     console.log(valeurs);
+// }
+// index = 0;
+// var condition = 0;
+var valeurs = [];
+
+function suiveQuetion() {
+    index = 0;
+    var inputTom = document.getElementById("inputTom");
+    if (ipt1.children[0].id === "inputTom") {
+        // console.log("hana");
+        if (!inputTom.value) {
+            alert("Svth zfeh");
+            return;
+        } else {
+            // var number = parseFloat(inputTom.value);
+            valeurs.push(inputTom.value);
+            console.log(valeurs);
+        }
     } else {
-        button.disabled = false;
+        var selectR = document.querySelector('input[name="choice"]:checked');
+        if (!selectR) {
+            alert("SVP choisir une reponse!");
+            return;
+        } else {
+            var value = selectR.getAttribute("value");
+            valeurs.push(value);
+            console.log(valeurs);
+        }
     }
-});
+
+    index++;
+    this.app.load(index);
+}

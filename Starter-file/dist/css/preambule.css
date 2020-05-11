@@ -146,7 +146,6 @@
     display: flex;
     justify-content: space-between; }
     .container .boott .ent {
-      visibility: hidden;
       cursor: pointer; }
     .container .boott .sor {
       padding: 1px 10px; }

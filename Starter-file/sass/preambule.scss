@@ -174,15 +174,15 @@
         display: flex;
         justify-content: space-between;
         .ent {
-            visibility: hidden;
+            // visibility: hidden;
             cursor: pointer;
         }
         .sor {
             padding: 1px 10px;
-            &:disabled {
-                cursor: not-allowed;
-                opacity: 0.5;
-            }
+            // &:disabled {
+            //     cursor: not-allowed;
+            //     opacity: 0.5;
+            // }
         }
         .btn {
             margin-top: 50px;

@@ -569,15 +569,14 @@ body {
     display: flex;
     justify-content: space-between; }
     .container .boott .ent {
-      visibility: hidden;
       cursor: pointer; }
     .container .boott .sor {
-      padding: 10px 10px; }
+      padding: 1px 10px; }
       .container .boott .sor:disabled {
         cursor: not-allowed;
         opacity: 0.5; }
     .container .boott .btn {
-      font-family: "Cairo", sans-serif;
+      margin-top: 50px;
       border: 2px solid #1078ad;
       background-color: rgba(16, 121, 173, 0.2);
       color: #1078ad;
