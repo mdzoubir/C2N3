@@ -85,7 +85,7 @@ var app = {
     load: function() {
         if (this.index < 21) {
             question.innerHTML = this.questions[this.index].q;
-            // button.disabled = true;
+            button.disabled = true;
             ipt1.innerHTML = "";
             ipt1.innerHTML += `
                          <div>
@@ -233,17 +233,17 @@ function newFunction() {
     // suiveQuetion();
 }
 
-// ipt1.addEventListener("change", (event) => {
-//     const input = event.target;
-//     if (input.type === "radio") {
-//         button.disabled = false;
-//         btn.addEventListener("onmouseout", () => {
-//             btn.style.backgroundColor = "#1078ad";
-//         });
-//     } else {
-//         button.disabled = false;
-//     }
-// });
+ipt1.addEventListener("change", (event) => {
+    const input = event.target;
+    if (input.type === "radio") {
+        button.disabled = false;
+        btn.addEventListener("onmouseout", () => {
+            btn.style.backgroundColor = "#1078ad";
+        });
+    } else {
+        button.disabled = false;
+    }
+});
 
 // // afficher next questions
 
@@ -307,7 +307,6 @@ function newFunction() {
 var valeurs = [];
 
 function suiveQuetion() {
-    index = 0;
     var inputTom = document.getElementById("inputTom");
     if (ipt1.children[0].id === "inputTom") {
         // console.log("hana");
@@ -330,7 +329,5 @@ function suiveQuetion() {
             console.log(valeurs);
         }
     }
-
-    index++;
-    this.app.load(index);
+    app.load();
 }
