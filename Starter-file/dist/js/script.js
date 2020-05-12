@@ -230,7 +230,6 @@ function newFunction() {
     document.getElementById("test").style.display = "block";
     etape[0].classList.remove("ball");
     etape[1].classList.add("ball");
-    // suiveQuetion();
 }
 
 ipt1.addEventListener("change", (event) => {
@@ -307,10 +306,10 @@ ipt1.addEventListener("change", (event) => {
 var valeurs = [];
 
 function suiveQuetion() {
+    this.index = this.index - 1;
     var inputTom = document.getElementById("inputTom");
     if (ipt1.children[0].id === "inputTom") {
-        // console.log("hana");
-        if (!inputTom.value) {
+        if (inputTom.value = "  ") {
             alert("Svth zfeh");
             return;
         } else {
@@ -326,8 +325,8 @@ function suiveQuetion() {
         } else {
             var value = selectR.getAttribute("value");
             valeurs.push(value);
-            console.log(valeurs);
+            console.log(valeurs
+
+            }
         }
     }
-    app.load();
-}
