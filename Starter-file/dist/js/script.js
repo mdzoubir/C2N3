@@ -14,6 +14,9 @@ var etape = document.querySelectorAll(".etape h5");
 var btn = document.querySelector(".btn");
 var onwan = document.getElementById("onwan");
 var nas = document.getElementById("nas");
+var nastani = document.getElementById("nastani");
+var blas = document.getElementById("blas");
+var restart = document.getElementById("restart");
 
 var app = {
     questions: [{
@@ -193,9 +196,10 @@ var app = {
         this.load();
         if (this.index <= 20) {
             button.innerHTML = "Suivant";
-        } else {
+        } else if (this.index === 21) {
             button.innerHTML = "Terminer le Test";
             button.addEventListener("click", showResult());
+
         }
     },
     previous: function() {
@@ -246,6 +250,7 @@ ipt1.addEventListener("change", (event) => {
         button.disabled = false;
     }
 });
+
 var valeurs = [];
 var cond = 0;
 
@@ -283,6 +288,10 @@ function showResult() {
     para.style.display = "block";
     blo.style.display = "block";
     document.getElementById("test").style.display = "none";
+    onwan.innerHTML = "Résultats";
+    nastani.innerHTML = "Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène. "
+    blas.innerHTML = 'Restart Test';
+    restart.style.marginLeft = '100px';
     var fGMin, fGMag, fProno;
 
     //les facteur de gravité mineur;
@@ -365,7 +374,7 @@ function showResult() {
     ) {
         if (fProno === false) {
             if (fGMag === false && fGMin === false && valeurs[10] > 50) {
-                onwan.innerHTML = "Résultats";
+
                 nas.innerHTML =
                     " nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes. ";
             } else if (
@@ -373,53 +382,44 @@ function showResult() {
                 fGMin === false &&
                 (valeurs[10] < 50 || valeurs[10] > 69)
             ) {
-                onwan.innerHTML = "Résultats";
+
                 nas.innerHTML =
                     "téléconsultation ou médecin généraliste ou visite à domicile ";
             }
         } else if ((fProno === false || fProno === true) && fGMag === true) {
-            onwan.innerHTML = "Résultats";
             nas.innerHTML = "Appel 141";
         } else {
             if (fGMag === false && fGMin === false) {
-                onwan.innerHTML = "Résultats";
                 nas.innerHTML =
                     "téléconsultation ou médecin généraliste ou visite à domicile ";
             } else if (fGMag === false && fGMin === 1) {
-                onwan.innerHTML = "Résultats";
                 nas.innerHTML =
                     "téléconsultation ou médecin généraliste ou visite à domicile";
             } else if (fGMag === false && fGMin === 2) {
-                onwan.innerHTML = "Résultats";
                 nas.innerHTML = "appel 141";
             }
         }
 
         //la 2eme cas:
-    } else if (reponses[0] === "oui" && reponses[2] === "oui") {
+    } else if (valeurs[0] === "oui" && valeurs[2] === "oui") {
         if (fProno === false) {
             if (
                 (fGMag === false && fGMin === false) ||
                 (fGMin === true && fGMag === false)
             ) {
-                onwan.innerHTML = "Résultats";
                 nas.innerHTML =
                     " téléconsultation ou médecin généraliste ou visite à domicile";
             }
         } else if ((fProno === false || fProno === true) && fGMag === true) {
-            onwan.innerHTML = "Résultats";
             nas.innerHTML = " appel 141 ";
         } else {
             if (fGMag === false && fGMin === false) {
-                onwan.innerHTML = "Résultats";
                 nas.innerHTML =
                     " téléconsultation ou médecin généraliste ou visite à domicile ";
             } else if (fGMin === 1) {
-                onwan.innerHTML = "Résultats";
                 nas.innerHTML =
                     "téléconsultation ou médecin généraliste ou visite à domicile";
             } else if (fGMin === 2) {
-                onwan.innerHTML = "Résultats";
                 nas.innerHTML = " appel 141 ";
             }
         }
@@ -443,11 +443,9 @@ function showResult() {
             valeurs[4] === "oui")
     ) {
         if (fGMag === false && fGMin === false) {
-            nwan.innerHTML = "Résultats";
             nas.innerHTML =
                 "Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute. ";
         } else if ((fGMag === true && fGMin === true) || fProno === true) {
-            nwan.innerHTML = "Résultats";
             nas.innerHTML =
                 "Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141";
         }
@@ -459,8 +457,9 @@ function showResult() {
         valeurs[3] === "non" &&
         valeurs[4] === "non"
     ) {
-        nwan.innerHTML = "Résultats";
         nas.innerHTML =
             "Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la   situation.   Pour   toute information concernant   le   Covid-19 allez vers la page d’accueil.";
+    } else {
+        nas.innerHTML = 'rak bikhir'
     }
 }
