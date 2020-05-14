@@ -194,11 +194,14 @@ var app = {
     next: function() {
         this.index++;
         this.load();
-        if (this.index <= 20) {
+        if (this.index < 21) {
             button.innerHTML = "Suivant";
-        } else if (this.index === 21) {
+        } else if (this.index >= 21) {
             button.innerHTML = "Terminer le Test";
-            button.addEventListener("click", showResult());
+            if (this.index === 21) {
+                button.addEventListener("click", showResult());
+
+            }
 
         }
     },
@@ -291,7 +294,7 @@ function showResult() {
     onwan.innerHTML = "Résultats";
     nastani.innerHTML = "Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène. "
     blas.innerHTML = 'Restart Test';
-    restart.style.marginLeft = '100px';
+    // restart.style.marginLeft = '100px';
     var fGMin, fGMag, fProno;
 
     //les facteur de gravité mineur;
@@ -462,4 +465,5 @@ function showResult() {
     } else {
         nas.innerHTML = 'rak bikhir'
     }
+    window.onload = load();
 }
