@@ -465,5 +465,5 @@ function showResult() {
     } else {
         nas.innerHTML = 'rak bikhir'
     }
-    window.onload = load();
+
 }

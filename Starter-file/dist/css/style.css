@@ -141,10 +141,10 @@ body {
 .content__colum2--but {
     font-family: cairo;
     margin-top: 15px;
-    width: 85%;
+    width: 80%;
     height: 51px;
     border: none;
-    background-image: url("Design/Assets/SVG/En chiffres-1.svg");
+    background-image: url("/Design/Assets/SVG/En chiffres-1.svg");
     border-radius: 8px;
     color: white;
     font-size: 32px;
@@ -407,7 +407,7 @@ body {
     width: 85%;
     height: 51px;
     border: none;
-    background-image: url("/Design/Assets/SVG/En chiffres-1.svg");
+    background-image: url("/Design/Assets/SVG/En\ chiffres-1.svg");
     border-radius: 8px;
     color: white;
     font-size: 32px;

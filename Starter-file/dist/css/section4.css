@@ -1,50 +1,35 @@
 .section3 {
-    background-color: #D0E5F0;
-    text-align: center;
-}
-
-.section3__para {
+  background-color: #D0E5F0;
+  text-align: center; }
+  .section3__para {
     color: #1078AD;
     font-size: 30px;
-    padding-top: 5px;
-}
-
-.section3__img {
-    padding: 10px;
-}
-
-.section3__btn {
+    padding-top: 5px; }
+  .section3__img {
+    padding: 10px; }
+  .section3__btn {
     font-family: cairo;
     margin-top: 15px;
     width: 85%;
     height: 51px;
     border: none;
-    background-image: url("Design/Assets/SVG/En chiffres-1.svg");
+    background-image: url("/Design/Assets/SVG/En chiffres-1.svg");
     border-radius: 8px;
     color: white;
     font-size: 32px;
     cursor: pointer;
     width: 35%;
     margin-top: 0px;
-    margin-bottom: 20px;
-}
-
-.section3__btn img {
-    width: 30px;
-    padding-left: 10px;
-}
-
-.section3__btn a {
-    text-decoration: none;
-    color: white;
-    font-family: "Cairo", sans-serif;
-}
-
-@media (max-width: 980px) {
-    .section3__btn {
-        width: 250px;
-    }
+    margin-bottom: 20px; }
     .section3__btn img {
-        display: none;
-    }
-}
+      width: 30px;
+      padding-left: 10px; }
+    .section3__btn a {
+      text-decoration: none;
+      color: white;
+      font-family: "Cairo", sans-serif; }
+    @media (max-width: 980px) {
+      .section3__btn {
+        width: 250px; }
+        .section3__btn img {
+          display: none; } }
