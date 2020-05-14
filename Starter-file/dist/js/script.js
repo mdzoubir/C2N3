@@ -294,6 +294,8 @@ function showResult() {
     onwan.innerHTML = "Résultats";
     nastani.innerHTML = "Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène. "
     blas.innerHTML = 'Restart Test';
+    etape[1].classList.remove("ball");
+    etape[2].classList.add("ball");
     // restart.style.marginLeft = '100px';
     var fGMin, fGMag, fProno;
 
