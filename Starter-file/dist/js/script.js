@@ -12,6 +12,8 @@ var blo = document.getElementById("clicked");
 var dom = document.getElementsByClassName("preambule");
 var etape = document.querySelectorAll(".etape h5");
 var btn = document.querySelector(".btn");
+var onwan = document.getElementById("onwan");
+var nas = document.getElementById("nas");
 
 var app = {
     questions: [{
@@ -171,14 +173,12 @@ var app = {
                         </label>
                         </div>
                         <div>
-                        <input type="radio" name="choice" id="hom" class="lab">
+                        <input type="radio" name="choice" id="hom" class="lab" value="homme">
                         <label for="hom">
                             <i class="fas fa-male"></i>
                             <span>Homme</span>
                         </label>
                         </div>`;
-            } else if (this.index === 21) {
-                button.innerHTML = "Terminer le test";
             }
         }
         if (this.index === 0) {
@@ -191,15 +191,21 @@ var app = {
     next: function() {
         this.index++;
         this.load();
-        if (this.index < 21) {
-            button.innerHTML = "Suivans";
-        } else if (this.index >= 21) {
+        if (this.index <= 20) {
+            button.innerHTML = "Suivant";
+        } else {
             button.innerHTML = "Terminer le Test";
+            button.addEventListener("click", showResult());
         }
     },
     previous: function() {
         this.index--;
         this.load();
+        if (this.index < 21) {
+            button.innerHTML = "Suivant";
+        } else if (this.index === 20) {
+            button.innerHTML = "Terminer le Test";
+        }
     },
     scoreB: function() {
         if (this.index <= 21) {
@@ -212,15 +218,15 @@ window.onload = app.load();
 window.onload = app.scoreB();
 
 function next() {
+    getAnswer();
     app.next();
     app.scoreB();
-    suiveQuetion();
 }
 
 function previous() {
     app.previous();
     app.scoreB();
-    // preceQuetion();
+    delAnswer();
 }
 
 function newFunction() {
@@ -236,97 +242,225 @@ ipt1.addEventListener("change", (event) => {
     const input = event.target;
     if (input.type === "radio") {
         button.disabled = false;
-        btn.addEventListener("onmouseout", () => {
-            btn.style.backgroundColor = "#1078ad";
-        });
     } else {
         button.disabled = false;
     }
 });
-
-// // afficher next questions
-
-// function suiveQuetion() {
-//     var inputTom = document.querySelector("#inputTom");
-//     if (ipt1.children[0].id === "inputTom") {
-//         if (inputTom.value === " ") {
-//             alert("SVP choisir une valeur");
-//             return;
-//         } else if (
-//             this.index === 1 &&
-//             (inputTom.value < 34 || inputTom.value > 42)
-//         ) {
-//             alert("la temperature doit etre comprise entre 34 et 42");
-//             return;
-//         } else if (
-//             this.index === 10 &&
-//             (inputTom.value < 15 || inputTom.value > 110)
-//         ) {
-//             alert("l'age doit etre comprise entre 15 et 110");
-//             return;
-//         } else if (
-//             this.index === 11 &&
-//             (inputTom.value < 20 || inputTom.value > 250)
-//         ) {
-//             alert("le poids doit etre comprise entre 20 et 250");
-//             return;
-//         } else if (
-//             this.index === 12 &&
-//             (inputTom.value < 80 || inputTom.value > 250)
-//         ) {
-//             alert("la taille doit etre compris entre 80 et 250");
-//             return;
-//         } else {
-//             var number = parseFloat(inputTom.value);
-//             valeurs.push(number);
-//             console.log(valeurs);
-//         }
-//     } else {
-//         var selectR = document.querySelectorAll('input[type="radio"]:checked');
-//         if (!selectR) {
-//             alert("SVP choisir une reponse!");
-//             return;
-//         } else {
-//             var value = selectR.getAttribute("value");
-//             valeurs.push(value);
-//             console.log(valeurs);
-//         }
-//     }
-//     this.index++;
-// }
-
-// function preceQuetion() {
-//     this.index--;
-//     valeurs.pop(this.index); // supprimer la reponse enregister a la fin de tableau s'il ya un retour vers la question precedente (modification)
-
-//     console.log(valeurs);
-// }
-// index = 0;
-// var condition = 0;
 var valeurs = [];
+var cond = 0;
 
-function suiveQuetion() {
-    this.index = this.index - 1;
+function getAnswer() {
     var inputTom = document.getElementById("inputTom");
     if (ipt1.children[0].id === "inputTom") {
-        if (inputTom.value = "  ") {
-            alert("Svth zfeh");
-            return;
-        } else {
-            // var number = parseFloat(inputTom.value);
-            valeurs.push(inputTom.value);
+        if (inputTom.value) {
+            var number = parseFloat(inputTom.value);
+            valeurs.push(number);
             console.log(valeurs);
+        } else {
+            alert("pas de valeur");
         }
     } else {
         var selectR = document.querySelector('input[name="choice"]:checked');
-        if (!selectR) {
-            alert("SVP choisir une reponse!");
-            return;
-        } else {
+        if (selectR) {
             var value = selectR.getAttribute("value");
             valeurs.push(value);
-            console.log(valeurs
-
-            }
+            console.log(valeurs);
+        } else {
+            alert("pas de reponse");
         }
     }
+    console.log(cond);
+    cond++;
+}
+
+function delAnswer() {
+    cond--;
+    valeurs.pop(cond);
+    console.log(valeurs);
+}
+
+function showResult() {
+    para.style.display = "block";
+    blo.style.display = "block";
+    document.getElementById("test").style.display = "none";
+    var fGMin, fGMag, fProno;
+
+    //les facteur de gravité mineur;
+    if (
+        (valeurs[0] === "oui" && valeurs[1] >= 39) ||
+        valeurs[6] === "oui" ||
+        valeurs[9] === "Fatigué(e)" ||
+        valeurs[9] === "Très fatigué(e)"
+    ) {
+        fGMin = true;
+    } else {
+        fGMin = false;
+    }
+    if (
+        (valeurs[0] === "oui" &&
+            valeurs[1] >= 39 &&
+            valeurs[6] === "non" &&
+            (valeurs[9] === "Assez bien" || valeurs[9] === "Bien")) ||
+        (valeurs[0] === "non" &&
+            valeurs[6] === "oui" &&
+            (valeurs[9] === "Assez bien" || valeurs[9] === "Bien")) |
+        (valeurs[0] === "non" &&
+            valeurs[6] === "non" &&
+            (valeurs[9] === "Fatigué(e)" || valeurs[9] === "Très fatigué(e)"))
+    ) {
+        fGMin = 1;
+    } else if (
+        (valeurs[0] === "oui" &&
+            valeurs[1] >= 39 &&
+            valeurs[6] === "oui" &&
+            (valeurs[9] === "Fatigué(e)" || valeurs[9] === "Très fatigué(e)")) ||
+        (valeurs[0] === "oui" &&
+            valeurs[1] >= 39 &&
+            valeurs[6] === "oui" &&
+            (valeurs[9] === "Assez bien" || valeurs[9] === "Bien")) ||
+        (valeurs[0] === "oui" &&
+            valeurs[1] >= 39 &&
+            valeurs[6] === "non" &&
+            (valeurs[9] === "Fatigué(e)" || valeurs[9] === "Très fatigué(e)")) ||
+        (valeurs[0] === "non" &&
+            valeurs[6] === "oui" &&
+            (valeurs[9] === "Fatigué(e)" || valeurs[9] === "Très fatigué(e)"))
+    ) {
+        fGMin = 2;
+    }
+    //les facteur de gravité majeur;
+    if (
+        (valeurs[0] === "oui" && valeurs[1] <= 35) ||
+        valeurs[7] === "oui" ||
+        valeurs[8] === "oui"
+    ) {
+        fGMag = true;
+    } else {
+        fGMag = false;
+    }
+    //les facteurs pronostiques :
+    if (
+        valeurs[10] >= 70 ||
+        valeurs[13] === "oui" ||
+        valeurs[14] === "oui" ||
+        valeurs[15] === "oui" ||
+        valeurs[16] === "oui" ||
+        valeurs[17] === "oui" ||
+        valeurs[18] === "oui" ||
+        valeurs[19] === "oui" ||
+        valeurs[20] === "oui" ||
+        valeurs[21] === "oui"
+    ) {
+        fProno = true;
+    } else {
+        fProno = false;
+    }
+
+    //la premier cas
+    if (
+        valeurs[0] === "oui" ||
+        (valeurs[2] === "oui" && valeurs[3] === "oui") ||
+        (valeurs[2] === "oui" && valeurs[4] === "oui") ||
+        (valeurs[0] === "oui" && valeurs[5] === "oui")
+    ) {
+        if (fProno === false) {
+            if (fGMag === false && fGMin === false && valeurs[10] > 50) {
+                onwan.innerHTML = "Résultats";
+                nas.innerHTML =
+                    " nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes. ";
+            } else if (
+                fGMag === false &&
+                fGMin === false &&
+                (valeurs[10] < 50 || valeurs[10] > 69)
+            ) {
+                onwan.innerHTML = "Résultats";
+                nas.innerHTML =
+                    "téléconsultation ou médecin généraliste ou visite à domicile ";
+            }
+        } else if ((fProno === false || fProno === true) && fGMag === true) {
+            onwan.innerHTML = "Résultats";
+            nas.innerHTML = "Appel 141";
+        } else {
+            if (fGMag === false && fGMin === false) {
+                onwan.innerHTML = "Résultats";
+                nas.innerHTML =
+                    "téléconsultation ou médecin généraliste ou visite à domicile ";
+            } else if (fGMag === false && fGMin === 1) {
+                onwan.innerHTML = "Résultats";
+                nas.innerHTML =
+                    "téléconsultation ou médecin généraliste ou visite à domicile";
+            } else if (fGMag === false && fGMin === 2) {
+                onwan.innerHTML = "Résultats";
+                nas.innerHTML = "appel 141";
+            }
+        }
+
+        //la 2eme cas:
+    } else if (reponses[0] === "oui" && reponses[2] === "oui") {
+        if (fProno === false) {
+            if (
+                (fGMag === false && fGMin === false) ||
+                (fGMin === true && fGMag === false)
+            ) {
+                onwan.innerHTML = "Résultats";
+                nas.innerHTML =
+                    " téléconsultation ou médecin généraliste ou visite à domicile";
+            }
+        } else if ((fProno === false || fProno === true) && fGMag === true) {
+            onwan.innerHTML = "Résultats";
+            nas.innerHTML = " appel 141 ";
+        } else {
+            if (fGMag === false && fGMin === false) {
+                onwan.innerHTML = "Résultats";
+                nas.innerHTML =
+                    " téléconsultation ou médecin généraliste ou visite à domicile ";
+            } else if (fGMin === 1) {
+                onwan.innerHTML = "Résultats";
+                nas.innerHTML =
+                    "téléconsultation ou médecin généraliste ou visite à domicile";
+            } else if (fGMin === 2) {
+                onwan.innerHTML = "Résultats";
+                nas.innerHTML = " appel 141 ";
+            }
+        }
+        //la 3eme cas
+    } else if (
+        (valeurs[0] === "oui" &&
+            valeurs[2] === "non" &&
+            valeurs[3] === "non" &&
+            valeurs[4] === "non") ||
+        (valeurs[0] === "non" &&
+            valeurs[2] === "oui" &&
+            valeurs[3] === "non" &&
+            valeurs[4] === "non") ||
+        (valeurs[0] === "non" &&
+            valeurs[2] === "non" &&
+            valeurs[3] === "oui" &&
+            valeurs[4] === "non") ||
+        (valeurs[0] === "non" &&
+            valeurs[2] === "non" &&
+            valeurs[3] === "non" &&
+            valeurs[4] === "oui")
+    ) {
+        if (fGMag === false && fGMin === false) {
+            nwan.innerHTML = "Résultats";
+            nas.innerHTML =
+                "Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute. ";
+        } else if ((fGMag === true && fGMin === true) || fProno === true) {
+            nwan.innerHTML = "Résultats";
+            nas.innerHTML =
+                "Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141";
+        }
+    }
+    //cas 4
+    else if (
+        valeurs[0] === "non" &&
+        valeurs[2] === "non" &&
+        valeurs[3] === "non" &&
+        valeurs[4] === "non"
+    ) {
+        nwan.innerHTML = "Résultats";
+        nas.innerHTML =
+            "Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la   situation.   Pour   toute information concernant   le   Covid-19 allez vers la page d’accueil.";
+    }
+}
